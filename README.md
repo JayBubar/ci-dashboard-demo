@@ -1,2 +1,2 @@
 # ci-dashboard-demo
-RX CI Dashboard for client
+RX CI Dashboard for client Demo

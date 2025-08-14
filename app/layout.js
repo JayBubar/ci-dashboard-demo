@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Constituent Intelligence Dashboard',
+  title: 'Constituent Intelligence Hub',
   description: 'Strategic roadmap for fundraising success',
 }
 

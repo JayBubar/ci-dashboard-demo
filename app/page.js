@@ -350,7 +350,7 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-3xl font-bold mb-2">Constituent Intelligence Dashboard</h1>
+              <h1 className="text-3xl font-bold mb-2">Constituent Intelligence Hub</h1>
               <p className="text-blue-200">{customerData.organizationName} • FY2025 Strategic Roadmap</p>
             </div>
             <div className="text-right">

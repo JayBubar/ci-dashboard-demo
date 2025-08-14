@@ -464,7 +464,8 @@ export default function Dashboard() {
                       completionDate={completionDates[report.id]}
                       onToggle={toggleReportCompletion}
                       onViewReport={(report) => {
-                        alert(`Opening report: ${report.name}\n\nSample data: ${JSON.stringify(report.sampleData, null, 2)}`);
+                        const demoUrl = "https://demo.reportingxpress.org/Share?ctx=Ikprngf_a4Gt-hLB8AyRPUW7mWHCUIiH-O1_WwJuskbUU9QgY-K-u-462njsc6TSZ3SCsT9dbgyxCeX__vaxWgFLKUVBkxjozOL7KCqAc1KjXd9HR7CKeQckgnU-Ntew6v-wxe7SneIUqCLR27MyHUijZ9UmgDwLJl2NT-8krTZZwInHJgal5H0T0-sv2iz3j0XkYvExAC-utGbKSrPcnJS9y3ndY1Lf1p7hJuUVIxE1xfvTZf-eN7LVFxlsrW79DN0z8GEh0qyjY4X0jUitUB12X_n7IjP1gn0GNKdlBLhS6f1lkUtkwAlvHtVBuOFjYQVA1KhbEwz1fj35wX38Aw";
+                        window.open(demoUrl, '_blank');
                       }}
                     />
                   ))}

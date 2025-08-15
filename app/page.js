@@ -275,16 +275,16 @@ export default function Dashboard() {
         </div>
         
         <div className="p-4 space-y-3">
-          <div className="bg-blue-50/80 backdrop-blur-sm p-3 rounded border-l-4 border-blue-400">
-            <p className="text-sm"><strong>Tags:</strong></p>
-          </div>
-
           <div className="bg-yellow-50/80 backdrop-blur-sm p-3 rounded border-l-4 border-yellow-400">
             <p className="text-sm italic"><strong>Key Question:</strong> {report.question}</p>
           </div>
 
           <div className="bg-green-50/80 backdrop-blur-sm p-3 rounded border-l-4 border-green-400">
             <p className="text-sm"><strong>Action:</strong> {report.action}</p>
+          </div>
+
+          <div className="bg-blue-50/80 backdrop-blur-sm p-3 rounded border-l-4 border-blue-400">
+            <p className="text-sm"><strong>Tags:</strong></p>
           </div>
 
           <div className="flex justify-between items-center pt-2">
@@ -314,7 +314,7 @@ export default function Dashboard() {
     acc + month.weeks.reduce((weekAcc, week) => weekAcc + week.reports.length, 0), 0
   );
   const completedCount = completedReports.size;
-  const monthlyProgressPercentage = ((currentMonth + 1) / 12 * 100).toFixed(1);
+  const monthlyProgressPercentage = (currentMonth / 12 * 100).toFixed(1);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 relative overflow-hidden">

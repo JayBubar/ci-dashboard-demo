@@ -314,7 +314,7 @@ export default function Dashboard() {
     acc + month.weeks.reduce((weekAcc, week) => weekAcc + week.reports.length, 0), 0
   );
   const completedCount = completedReports.size;
-  const completionPercentage = totalReports > 0 ? (completedCount / totalReports * 100).toFixed(1) : 0;
+  const monthlyProgressPercentage = ((currentMonth + 1) / 12 * 100).toFixed(1);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 relative overflow-hidden">
@@ -331,7 +331,7 @@ export default function Dashboard() {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold mb-2">Constituent Intelligence Hub</h1>
-              <p className="text-blue-200">{customerData.organizationName} • FY2025 Strategic Roadmap</p>
+              <p className="text-blue-200">Fiscal Year Strategic Roadmap</p>
             </div>
             <div className="text-right">
               <div className="flex items-center space-x-2 text-blue-200 mb-2">
@@ -339,7 +339,7 @@ export default function Dashboard() {
                 <span className="text-sm">Last updated: {customerData.lastUpdated}</span>
               </div>
               <div className="text-sm text-blue-200 mb-1">
-                Progress: {completedCount}/{totalReports} reports ({completionPercentage}%)
+                Progress: {completedCount}/{totalReports} reports ({((completedCount / totalReports) * 100).toFixed(1)}%)
               </div>
               <div className="text-xs text-blue-300 italic">
                 Powered by Reporting Xpress
@@ -379,11 +379,11 @@ export default function Dashboard() {
           <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
             <div 
               className="bg-gradient-to-r from-purple-500 to-blue-500 h-3 rounded-full transition-all duration-500 shadow-sm"
-              style={{ width: `${completionPercentage}%` }}
+              style={{ width: `${monthlyProgressPercentage}%` }}
             ></div>
           </div>
           <p className="text-sm text-gray-600 text-center">
-            Overall Progress: {completedCount} of {totalReports} reports completed ({completionPercentage}%)
+            Fiscal Year Progress: Month {currentMonth + 1} of 12 ({monthlyProgressPercentage}%)
           </p>
         </div>
 

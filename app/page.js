@@ -275,25 +275,9 @@ export default function Dashboard() {
         </div>
         
         <div className="p-4 space-y-3">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-2">
-              <Calendar className="w-4 h-4 text-gray-500" />
-              <span className={`text-sm ${isOverdue ? 'text-red-600 font-semibold' : 'text-gray-600'}`}>
-                Due: {new Date(report.dueDate).toLocaleDateString()}
-              </span>
-            </div>
-            <div className="flex items-center space-x-2">
-              {isOverdue && <AlertTriangle className="w-4 h-4 text-red-500" />}
-              {isDueSoon && !isOverdue && <Clock className="w-4 h-4 text-yellow-500" />}
-            </div>
+          <div className="bg-blue-50/80 backdrop-blur-sm p-3 rounded border-l-4 border-blue-400">
+            <p className="text-sm"><strong>Tags:</strong></p>
           </div>
-
-          {isCompleted && completionDate && (
-            <div className="flex items-center space-x-2 text-green-600 text-sm bg-green-50 p-2 rounded border border-green-200">
-              <CheckCircle className="w-4 h-4" />
-              <span>Completed on {new Date(completionDate).toLocaleDateString()}</span>
-            </div>
-          )}
 
           <div className="bg-yellow-50/80 backdrop-blur-sm p-3 rounded border-l-4 border-yellow-400">
             <p className="text-sm italic"><strong>Key Question:</strong> {report.question}</p>
@@ -305,34 +289,20 @@ export default function Dashboard() {
 
           <div className="flex justify-between items-center pt-2">
             <button
-              onClick={() => onToggle(report.id)}
-              className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all shadow-sm ${
-                isCompleted 
-                  ? 'bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 hover:from-green-200 hover:to-emerald-200 border border-green-200' 
-                  : 'bg-gradient-to-r from-gray-100 to-slate-100 text-gray-700 hover:from-gray-200 hover:to-slate-200 border border-gray-200'
-              }`}
+              onClick={() => window.open('https://www.reportingxpress.com/xpress-insights/is-your-nonprofit-ready-for-revops', '_blank')}
+              className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 rounded-lg hover:from-amber-200 hover:to-orange-200 transition-all border border-amber-200 shadow-sm"
             >
-              <CheckCircle className={`w-4 h-4 ${isCompleted ? 'text-green-600' : 'text-gray-400'}`} />
-              <span className="text-sm">{isCompleted ? 'Completed' : 'Mark Complete'}</span>
+              <BookOpen className="w-4 h-4" />
+              <span className="text-sm">Resources</span>
             </button>
 
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => window.open('https://www.reportingxpress.com/xpress-insights/is-your-nonprofit-ready-for-revops', '_blank')}
-                className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 rounded-lg hover:from-amber-200 hover:to-orange-200 transition-all border border-amber-200 shadow-sm"
-              >
-                <BookOpen className="w-4 h-4" />
-                <span className="text-sm">Resources</span>
-              </button>
-
-              <button
-                onClick={() => onViewReport(report)}
-                className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 rounded-lg hover:from-blue-200 hover:to-cyan-200 transition-all border border-blue-200 shadow-sm"
-              >
-                <Eye className="w-4 h-4" />
-                <span className="text-sm">View Report</span>
-              </button>
-            </div>
+            <button
+              onClick={() => onViewReport(report)}
+              className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 rounded-lg hover:from-blue-200 hover:to-cyan-200 transition-all border border-blue-200 shadow-sm"
+            >
+              <Eye className="w-4 h-4" />
+              <span className="text-sm">View Report</span>
+            </button>
           </div>
         </div>
       </div>

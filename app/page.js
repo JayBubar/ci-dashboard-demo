@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle, Clock, AlertTriangle, TrendingUp, TrendingDown, Users, DollarSign, Target, FileText, Eye, Calendar, User } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle, Clock, AlertTriangle, TrendingUp, TrendingDown, Users, DollarSign, Target, FileText, Eye, Calendar, User, BookOpen } from 'lucide-react';
 
 export default function Dashboard() {
   const [currentMonth, setCurrentMonth] = useState(6);
@@ -316,13 +316,23 @@ export default function Dashboard() {
               <span className="text-sm">{isCompleted ? 'Completed' : 'Mark Complete'}</span>
             </button>
 
-            <button
-              onClick={() => onViewReport(report)}
-              className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 rounded-lg hover:from-blue-200 hover:to-cyan-200 transition-all border border-blue-200 shadow-sm"
-            >
-              <Eye className="w-4 h-4" />
-              <span className="text-sm">View Report</span>
-            </button>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => window.open('https://www.reportingxpress.com/xpress-insights/is-your-nonprofit-ready-for-revops', '_blank')}
+                className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 rounded-lg hover:from-amber-200 hover:to-orange-200 transition-all border border-amber-200 shadow-sm"
+              >
+                <BookOpen className="w-4 h-4" />
+                <span className="text-sm">Resources</span>
+              </button>
+
+              <button
+                onClick={() => onViewReport(report)}
+                className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 rounded-lg hover:from-blue-200 hover:to-cyan-200 transition-all border border-blue-200 shadow-sm"
+              >
+                <Eye className="w-4 h-4" />
+                <span className="text-sm">View Report</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -333,15 +333,8 @@ export default function Dashboard() {
               <h1 className="text-3xl font-bold mb-2">Constituent Intelligence Hub</h1>
               <p className="text-blue-200">Fiscal Year Strategic Roadmap</p>
             </div>
-            <div className="text-right">
-              <div className="flex items-center space-x-2 text-blue-200 mb-2">
-                <User className="w-4 h-4" />
-                <span className="text-sm">Last updated: {customerData.lastUpdated}</span>
-              </div>
-              <div className="text-sm text-blue-200 mb-1">
-                Progress: {completedCount}/{totalReports} reports ({((completedCount / totalReports) * 100).toFixed(1)}%)
-              </div>
-              <div className="text-xs text-blue-300 italic">
+            <div className="flex items-center justify-center">
+              <div className="text-2xl text-blue-200 italic font-medium">
                 Powered by Reporting Xpress
               </div>
             </div>

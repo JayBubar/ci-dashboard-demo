@@ -380,44 +380,6 @@ export default function Dashboard() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 py-6">
-        {/* Compact KPI Dashboard */}
-        <div className="grid grid-cols-4 gap-4 mb-6">
-          <KPICard
-            title="Percentage of CI Success Plan"
-            value={customerData.kpis.percentageOfPlan.value}
-            subtitle={`Target: ${customerData.kpis.percentageOfPlan.target}%`}
-            trend={customerData.kpis.percentageOfPlan.trend}
-            icon={Target}
-            color="blue"
-            format="percentage"
-          />
-          <KPICard
-            title="Donor Retention Rate"
-            value={customerData.kpis.donorRetention.value}
-            subtitle={`Previous year: ${customerData.kpis.donorRetention.previousYear}%`}
-            trend={customerData.kpis.donorRetention.trend}
-            icon={Users}
-            color="purple"
-            format="percentage"
-          />
-          <KPICard
-            title="Average Gift Growth"
-            value={customerData.kpis.avgGiftGrowth.value}
-            subtitle="vs same month last year"
-            trend={customerData.kpis.avgGiftGrowth.trend}
-            icon={DollarSign}
-            color="cyan"
-            format="percentage"
-          />
-          <KPICard
-            title="Past Due Reports"
-            value={customerData.kpis.pastDueReports.count}
-            subtitle={`${customerData.kpis.pastDueReports.urgent} urgent`}
-            trend={-25}
-            icon={FileText}
-            color="red"
-          />
-        </div>
 
         {/* Month Navigation */}
         <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 mb-6 border border-white/20">

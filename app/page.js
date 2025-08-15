@@ -393,7 +393,7 @@ export default function Dashboard() {
             </button>
 
             <div className="text-center">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">{months[currentMonth]} 2024</h2>
+              <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Current FY Month {currentMonth + 1}</h2>
               <p className="text-gray-600">{getCurrentQuarter()} • {currentMonthData.title}</p>
             </div>
 
